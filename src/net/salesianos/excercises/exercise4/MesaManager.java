@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MesaManager {
-    private static final String FILE_NAME = "src\\net\\salesianos\\excercises\\exercise4\\mesas.obj";
+    private static final String FILE_NAME = "src\\net\\salesianos\\excercises\\exercise4\\mesas.txt";
 
     public static void guardarMesa(Mesa mesa) {
         List<Mesa> mesas = obtenerTodasLasMesas();
@@ -17,6 +17,7 @@ public class MesaManager {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static List<Mesa> obtenerTodasLasMesas() {
         List<Mesa> mesas = new ArrayList<>();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
