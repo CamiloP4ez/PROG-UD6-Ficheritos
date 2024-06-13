@@ -10,8 +10,11 @@ public class App {
         Scanner kb = new Scanner(System.in);
         String inputText;
 
-        File file = new File("texto_formateado.txt");// creacion del fichero con el try catch en caso de que el fichero
-                                                     // ya exista simplemente se va a sobreescribir
+        File file = new File("src\\net\\salesianos\\excercises\\exercise1\\texto_formateado.txt");// creacion del
+                                                                                                  // fichero con el try
+                                                                                                  // catch en caso de
+                                                                                                  // que el fichero
+        // ya exista simplemente se va a sobreescribir
         try {
             if (file.createNewFile()) {
                 System.out.println("Fichero creado: " + file.getName());
@@ -28,8 +31,8 @@ public class App {
             if (inputText.length() >= 30) {
                 break;
             } else {
-
-                System.out.println("Tienen que ser 30 caracteres, no menos");
+                int charsNeeded = 30 - inputText.length();
+                System.out.println("Faltan " + charsNeeded + " caracteres. Inténtalo de nuevo.");
             }
         }
 
